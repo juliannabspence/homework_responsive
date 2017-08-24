@@ -279,6 +279,10 @@ body.blog aside img {
 /* ///// MEDIA /////*/
 @media screen and (max-width: 780px) {
 
+  body {
+    font-size: .87em;
+  }
+
   body.blog .container { /* targets elements with class of container, that are descendants of a <body class="blog"> element */
   display: grid;
   grid-row-gap: 30px;
@@ -304,15 +308,16 @@ body.blog aside img {
   ul li a {
     /* font-size: 16.8px; */
   }
-/* ********* header & nav
-  - cant separate the logo and menu
-  -cant see menu upon dropdown */
+/* ********* header & nav */
 
-/* .page-header {
-  display: flex;
-  flex-wrap: wrap;
+header.page-header {
   padding: 0;
-}  not flexing the way i want it to in css but works in developer...*/
+  align-items: center;
+  justify-content: space-around;
+  /* BARRY: for some reason this isn't working for both so I had to add the below two styles to fix the index.html page header. I also can't get the nav to not cover the text on the idex.html when it is dropped down. */
+  min-height: 0;
+  max-height: 100px;
+} 
 
 .page-header nav {
   max-height: 0; /* start nav "closed" */
@@ -323,44 +328,75 @@ body.blog aside img {
   max-height: 200px;
   background: black;
   flex-direction: column;
-  /* background-image: none; trying to not display background-image when drop down appears */
-  /* only showing one - no other nav items */
 }
 
 .menu {
   display: block;
   color: white;
   font-weight: 900;
-  font-size: 16px; /* switch to em */
+  font-size: 16px;
+  text-align: right;
+  /* switch to em */
 }
 
-
-
-/* header ul li {  don't think i need this
-  width: 100%;
-  padding: 5px;
-  margin: 0;
+header nav ul {
+  flex-direction: column;
 }
 
- .logo {
-  font-size: 30px;
-} */
-
-/* ********** atricle content
-  - padding around the text and images 
-  - add read more/read less toggle buttons */
-
+/* ********** atricle content */
 
  section.left {
     display: flex;
     justify-content: space-around;
   }
 
-/* ********** partners 
-  - want to display flex and have images side by side
-  - shrink size of images */
+  .main {
+    padding: 10px;
+  }
 
+  body.blog article header p {
+    font-size: 1.16em;
+  }
 
+/* ********** partners */
+
+ body.blog aside div {
+  display:flex;
+  }
+
+  #partners {
+    justify-content: space-around;
+  }
+
+  .partner{
+    width: 48%;
+  }
+
+  #right img {
+    width: 100%;
+    height: 100%;
+  }
+
+div.slogan {
+  visibility: hidden;
+}
+
+/* ***** services */
+
+#services {
+  flex-direction: column;
+  align-items: center;
+}
+
+#services div {
+  padding: 10px;
+  width: 75%;
+}
+/* **** testimonial */
+
+blockquote {
+  font-size: 1.28em;
+  width: 75%;
 
 }
 
